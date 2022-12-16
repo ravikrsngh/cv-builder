@@ -1,0 +1,38 @@
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate {
+    position: relative;
+}
+.animate:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100px);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    animation: loading 0.8s infinite;
+}
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.loader {
+  width: 100%;
+  overflow: hidden;
+}
+.loader img {
+  opacity: 0;
+}
+.loader .template_container {
+  border: none;
+  background: rgba(0,0,0,0.1);
+}
+.loader .template_container:hover {
+  box-shadow: none;
+}

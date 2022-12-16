@@ -1,0 +1,67 @@
+.auth_container {
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth_container h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #020069;
+  margin-bottom: 25px;
+}
+.auth_container input {
+  padding: 15px 26px;
+  border: 1px solid #020069;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.auth_container input::placeholder {
+  color: #020069;
+  font-size: 16px;
+}
+.auth_container button {
+  width: 100%;
+  padding: 15px 26px;
+  border-radius: 36px;
+  background: #F9BB04;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+a.forgot_password {
+  display: block;
+  margin-top: -10px;
+  text-align: right;
+  font-size: 12px;
+  opacity: 0.75;
+}
+a.forgot_password:hover {
+  opacity: 1;
+}
+.auth_container .other_auth_options_container span {
+  font-size: 16px;
+  color: #bebebe;
+  display: block;
+  margin: 40px 0;
+}
+.auth_container .other_auth_options {
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  margin-bottom: 75px;
+}
+
+.auth_nav_message {
+  color: #555555;
+  font-size: 14px;
+  font-weight: 500;
+}
+.auth_nav_message a {
+  color: #4185F4;
+}
