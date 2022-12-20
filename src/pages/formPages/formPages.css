@@ -116,12 +116,19 @@
 }
 
 .form_details_tabs button:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.07);
+}
+.form_details_tabs button.active_tab {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .form_details_tabs button .icon {
   width: 20px;
   margin-right: 15px;
+}
+
+.form_details_tabs button .tickicon {
+  margin-left: auto
 }
 
 
@@ -196,6 +203,7 @@
   font-weight: 500;
 }
 .form_element button[type=submit] {
+
   color: white;
   background: #F9BB04;
   border: none;
@@ -215,4 +223,68 @@
 .form_element_checkbox label {
   margin: 0;
   margin-left: 10px;
+}
+
+
+.form_collapse_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+}
+
+.form_collapse_container_header {
+  display: flex;
+  align-items:center;
+  gap:40px;
+  margin: 20px 0;
+}
+.form_collapse_container_header h3 {
+  font-size: 18px;
+  color: #020069;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.preview_template_container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.preview_template_container .preview_template {
+  max-width: 420px;
+  margin: 80px 0;
+}
+.preview_template_actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+}
+.preview_template_actions button {
+  width: 140px;
+  height: 42px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.preview_btn {
+  border: 2px solid #F9BB04;
+  color: #F9BB04;
+}
+.download_btn {
+  color: white;
+  background: #F9BB04;
+  border: none;
 }
