@@ -24,6 +24,9 @@ import SharedCV from './../pages/dashboard/sharedCV';
 import PurchaseHistory from './../pages/dashboard/purchaseHistory';
 import OurServices from './../pages/dashboard/ourServices';
 import YourSubscription from './../pages/dashboard/yourSubscription';
+import OurTeams from './../pages/dashboard/ourTeams';
+import IndividualTeamPage from './../pages/individualTeam/individualTeam';
+import ServiceDetails from './../pages/serviceDetails/serviceDetails';
 
 const RouteData = () => {
   return (
@@ -49,8 +52,10 @@ const RouteData = () => {
         <Route path="shared-cv" element={<SharedCV />} />
         <Route path="purchase-history" element={<PurchaseHistory />} />
         <Route path="your-subscription" element={<YourSubscription />} />
-        <Route path="our-team" element={<PurchaseHistory />} />
         <Route path="our-services" element={<OurServices />} />
+        <Route path="our-team" element={<OurTeams />} />
+        <Route path="our-team/:id" element={<IndividualTeamPage/>} />
+        <Route path="our-services/:id" element={<ServiceDetails />} />
       </Route>
       <Route path='/preview-template' element={<PreviewTemplate />} />
     </Routes>

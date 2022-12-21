@@ -30,7 +30,6 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-
 .dashboard_sections {
   padding-top: 15px;
   padding-left: 40px;
@@ -296,4 +295,56 @@
   padding: 6px;
   background: #B2B2B2;
   border-radius: 4px;
+}
+
+
+
+.action_btn {
+  min-width: 120px;
+  padding: 6px;
+  background: #B2B2B2;
+  border-radius: 4px;
+}
+
+
+
+.team_card {
+  display: flex;
+  align-items: center;
+  gap:35px;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
+.team_img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.team_name {
+  font-size: 20px;
+  font-weight: 500;
+}
+.team_title {
+  font-size: 14px;
+}
+.team_services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.team_services span {
+  font-size: 10px;
+  color: black;
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  padding: 3px 15px;
+  border-radius: 10px;
+}
+.team_action {
+  margin-left: auto;
 }

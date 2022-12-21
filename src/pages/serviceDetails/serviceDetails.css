@@ -1,0 +1,34 @@
+.service_details_header {
+  display: flex;
+  gap:20px;
+  margin-bottom: 20px;
+}
+.service_details_header_img {
+  width: 100px;
+}
+.service_details_info h2 {
+  margin-bottom: 10px;
+}
+
+
+
+.services_team {
+  display: flex;
+  gap:40px;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+.professional_team_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.professional_team_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.professional_team_container h4 {
+  font-size: 16px;
+  font-weight: 500;
+}

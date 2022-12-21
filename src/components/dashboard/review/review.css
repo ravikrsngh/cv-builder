@@ -1,0 +1,14 @@
+.review_card {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.review_card_img {
+  width: 60px;
+}
+.review_card_info p {
+  margin-bottom: 10px;
+}
+.review_card_info span {
+  font-weight: 500;
+}
