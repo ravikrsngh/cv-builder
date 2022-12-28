@@ -246,13 +246,47 @@
 }
 
 
+.hobby_form_element {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:40px;
+  margin-bottom: 12px;
+}
+.hobby_icon_container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.hobby_form_element .input_text {
+  border: none;
+  background-color: #EDF4FF;
+  padding: 10px 20px;
+}
+.hobby_form_element .delete_hobby_btn img {
+  height: 25px;
+  width: auto;
+}
 
 
-
-
-
-
-
+.info_details_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 30px;
+  width: 100%;
+  background-color: #EDF4FF;
+}
+.info_details_container h6 {
+  font-size: 14px;
+  color: #020069;
+  font-weight: 500;
+}
+.info_details_container span {
+  font-size: 10px;
+  display: block;
+}
 
 
 

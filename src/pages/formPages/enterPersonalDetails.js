@@ -1,10 +1,63 @@
 import './formPages.css';
-import dropdownicon from './../../assets/img/icons/dropdown_icon.png'
-import React, {useState} from 'react';
+import dropdownicon from './../../assets/img/icons/dropdown_icon.png';
+import deleteicon from './../../assets/img/icons/delete.png'
+import hobbyicon from './../../assets/img/dummy/hooby_dummy_icon.png';
+import React, {useState,useRef} from 'react';
 import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
 
+
+const HobbyComponent = ({id,icon,value,onClickDeleteHobbyIcon}) => {
+  return (
+    <div className="form_container">
+      <div className="hobby_form_element">
+        <div className="hobby_icon_container"> <img src={icon} /> </div>
+        <input type="text" value={value} className="input_text" readOnly />
+        <button type="button" className="delete_hobby_btn" onClick={() => onClickDeleteHobbyIcon(id)}><img src={deleteicon} /></button>
+      </div>
+    </div>
+  )
+}
+
+const HobbyFormComponent = ({hobbiesHandler}) => {
+
+  const hobbyRef = useRef(null)
+
+  const onClickAddNewHobby = () => {
+    let new_hobby = {icon:"",value:hobbyRef.current.value}
+    hobbiesHandler((prev) => {
+      return [...prev,new_hobby]
+    })
+    hobbyRef.current.value=""
+  }
+
+  return (
+    <React.Fragment>
+    <div className="form_container">
+      <div className="hobby_form_element">
+        <div className="hobby_icon_container"> <img src={hobbyicon} /> </div>
+        <input type="text" className="input_text" ref={hobbyRef} />
+      </div>
+    </div>
+    <div className="form_container">
+      <div className="form_element">
+        <button type="button" onClick={onClickAddNewHobby}>Add</button>
+      </div>
+    </div>
+    </React.Fragment>
+  )
+}
+
 const AdditionalDetailsFormComponent = (props) => {
+
+  let [hobbies,setHobbies] = useState([])
+
+  const onClickDeleteHobbyIcon = (id) => {
+    let copy = [...hobbies]
+    copy.splice(id,1)
+    setHobbies(copy)
+  }
+
   if (!props.display) {
     return
   }
@@ -49,6 +102,15 @@ const AdditionalDetailsFormComponent = (props) => {
         <input type="text" className="input_text" />
       </div>
     </div>
+    <div className="form_container">
+      <div className="form_element">
+        <label>Hobby</label>
+      </div>
+    </div>
+    {hobbies.map((ins,key) => {
+      return <HobbyComponent key={key} id={key} icon={hobbyicon} value={ins.value} onClickDeleteHobbyIcon={onClickDeleteHobbyIcon} />
+    })}
+    <HobbyFormComponent hobbiesHandler={setHobbies} />
 
     </React.Fragment>
   )

@@ -17,7 +17,7 @@ const PreviewTemplate = () => {
     <div className="pd main_form_container">
       <div className="main_form_header">
         <div className="main_form_header_heading">
-          <span>2</span>
+          <span>3</span>
           <h2>Preview Your CV</h2>
         </div>
         <p>Each template is expertly designed and follows the exact “resume rules” hiring managers look for. Stand out and get hired faster with field-tested resume templates.</p>
