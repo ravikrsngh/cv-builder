@@ -11,12 +11,23 @@ import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
 
 const YourCV = () => {
+
+  let [currentTab,setCurrentTab] = useState("Completed")
+
+  const changeTab = () => {
+    if (currentTab == "Completed") {
+      setCurrentTab("InProgress")
+    } else {
+      setCurrentTab("Completed")
+    }
+  }
+
   return (
     <React.Fragment>
       <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your CV's</h3></div>
       <div className="dashboard_sections_header_with_tabs">
-        <button className="active_tab">Completed</button>
-        <button>In Progress</button>
+        <button className={currentTab == "Completed"? "active_tab" : ""} onClick={changeTab}>Completed</button>
+        <button className={currentTab == "InProgress"? "active_tab" : ""} onClick={changeTab}>In Progress</button>
       </div>
       <div className="dashboard_sections_4cols">
         <div className="dashboard_sections_4cols-col">

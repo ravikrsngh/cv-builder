@@ -11,12 +11,23 @@ import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
 
 const YourTemplates = () => {
+
+  let [currentTab,setCurrentTab] = useState("Purchased")
+
+  const changeTab = () => {
+    if (currentTab == "Purchased") {
+      setCurrentTab("BuyNew")
+    } else {
+      setCurrentTab("Purchased")
+    }
+  }
+
   return (
     <React.Fragment>
       <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your Templates</h3></div>
       <div className="dashboard_sections_header_with_tabs">
-        <button className="active_tab">Purchased</button>
-        <button>Buy a New Template</button>
+        <button className={currentTab == "Purchased"? "active_tab" : ""} onClick={changeTab}>Purchased</button>
+        <button className={currentTab == "BuyNew"? "active_tab" : ""} onClick={changeTab}>Buy a New Template</button>
       </div>
       <div className="dashboard_sections_4cols">
         <div className="dashboard_sections_4cols-col">

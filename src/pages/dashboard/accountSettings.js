@@ -4,6 +4,23 @@ import editicon from './../../assets/img/icons/edit.png';
 import React, {useState} from 'react';
 import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
+
+const AccountSettingsInputField = ({label,type,defaultValue}) => {
+
+  let [requiredField,setRequiredField] = useState(true)
+  let [readonlyField,setReadOnlyField] = useState(true)
+
+  return (
+    <div className="accounts_form_element">
+      <div>
+        <label className="accounts_form_element_label">{label}</label>
+        <input type={type} defaultValue={defaultValue} required={requiredField} readOnly={readonlyField} />
+      </div>
+      <img className="icon" src={editicon} onClick={() => setReadOnlyField(!readonlyField)} />
+    </div>
+  )
+}
+
 const AccountSettings = () => {
   return (
     <React.Fragment>
@@ -19,37 +36,13 @@ const AccountSettings = () => {
         </div>
       </div>
       <div className="accounts_form_container">
-        <div className="accounts_form_element">
-          <div>
-            <label className="accounts_form_element_label">Name</label>
-            <input type="text" value="Ravi Kumar Singh" readonly />
-          </div>
-          <img className="icon" src={editicon} />
-        </div>
-        <div className="accounts_form_element">
-          <div>
-            <label className="accounts_form_element_label">Email Address</label>
-            <input type="email" value="ravi@gmail.com" readonly />
-          </div>
-          <img className="icon" src={editicon} />
-        </div>
+        <AccountSettingsInputField label="Name" type="text" defaultValue="Ravi Kumar Singh" />
+        <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" />
       </div>
 
       <div className="accounts_form_container">
-        <div className="accounts_form_element">
-          <div>
-            <label className="accounts_form_element_label">Phone Number</label>
-            <input type="text" value="657389200" readonly />
-          </div>
-          <img className="icon" src={editicon} />
-        </div>
-        <div className="accounts_form_element">
-          <div>
-            <label className="accounts_form_element_label">Work Phone Number</label>
-            <input type="text" value="9046372822" readonly />
-          </div>
-          <img className="icon" src={editicon} />
-        </div>
+        <AccountSettingsInputField label="Phone Number" type="text" defaultValue="657389200" />
+        <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="657389200" />
       </div>
 
       <div className="accounts_form_container">

@@ -5,6 +5,25 @@
   display: grid;
   grid-template-columns: 250px auto;
 }
+.dashboard_tab_profile {
+  display: flex;
+  gap:15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.dashboard_tab_profile_pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dashboard_tab_profile_info h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.dashboard_tab_profile_info span {
+  font-size: 12px;
+  display: block;
+}
 .dashboard_tab_container button {
   width: 100%;
   display: flex;
@@ -22,6 +41,9 @@
 .dashboard_tab_container button .icon {
   width: 20px;
   margin-right: 15px;
+}
+.dashboard_tab_container button.active_tab {
+  background: rgba(0, 0, 0, 0.05);
 }
 .dashboard_tab_divider {
   width: 100%;
@@ -78,6 +100,11 @@
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+  gap:20px;
+}
+.accounts_form_element input:read-write {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 5px;
 }
 .accounts_form_element .icon {
   width: 20px;
