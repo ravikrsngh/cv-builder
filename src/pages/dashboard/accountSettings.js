@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
 
-const AccountSettingsInputField = ({label,type,defaultValue}) => {
+const AccountSettingsInputField = ({label,type,defaultValue,editable}) => {
 
   let [requiredField,setRequiredField] = useState(true)
   let [readonlyField,setReadOnlyField] = useState(true)
@@ -16,7 +16,8 @@ const AccountSettingsInputField = ({label,type,defaultValue}) => {
         <label className="accounts_form_element_label">{label}</label>
         <input type={type} defaultValue={defaultValue} required={requiredField} readOnly={readonlyField} />
       </div>
-      <img className="icon" src={editicon} onClick={() => setReadOnlyField(!readonlyField)} />
+      { editable? <img className="icon" src={editicon} onClick={() => setReadOnlyField(!readonlyField)} /> : null }
+
     </div>
   )
 }
@@ -26,6 +27,7 @@ const AccountSettings = () => {
     <React.Fragment>
     <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your Account</h3></div>
     <form>
+
       <div className="accounts_form_container">
         <div className="accounts_form_element_profile_pic">
           <div className="accounts_profile_pic">
@@ -35,14 +37,15 @@ const AccountSettings = () => {
           <input id="upload_profile_pic" type="file" />
         </div>
       </div>
+
       <div className="accounts_form_container">
-        <AccountSettingsInputField label="Name" type="text" defaultValue="Ravi Kumar Singh" />
-        <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" />
+        <AccountSettingsInputField label="Name" type="text" defaultValue="Ravi Kumar Singh" editable={false} />
+        <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} />
       </div>
 
       <div className="accounts_form_container">
-        <AccountSettingsInputField label="Phone Number" type="text" defaultValue="657389200" />
-        <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="657389200" />
+        <AccountSettingsInputField label="Phone Number" type="text" defaultValue="657389200" editable={true} />
+        <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="657389200" editable={true} />
       </div>
 
       <div className="accounts_form_container">
