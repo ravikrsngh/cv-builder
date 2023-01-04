@@ -1,6 +1,6 @@
 import './formPages.css';
 import droppdown_arrow from './../../assets/img/icons/droppdown_arrow.png';
-import rs1 from './../../assets/img/cv/resume9.jpg';
+import cv_watermark from './../../assets/img/cv/cv_watermark.png';
 import rs2 from './../../assets/img/cv/resume10.jpg';
 import rs3 from './../../assets/img/cv/resume11.jpg';
 import rs4 from './../../assets/img/cv/resume12.jpg';
@@ -24,7 +24,7 @@ const PreviewTemplate = () => {
       </div>
       <div className="preview_template_container">
         <div className="preview_template">
-          <img src={rs1} />
+          <img src={cv_watermark} />
         </div>
       </div>
       <div className="preview_template_actions">

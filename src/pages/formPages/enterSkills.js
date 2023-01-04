@@ -44,7 +44,8 @@ const SkillFormComponent = ({skillsHandler}) => {
       </div>
       <div className="form_element">
         <label>Proficiency</label>
-        <select className="input_select" defaultValue="Beginner" ref={proficiencyRef}>
+        <select className="input_select" defaultValue="" ref={proficiencyRef}>
+          <option value="">Keep Blank</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate">Intermediate</option>
           <option value="Advance">Advance</option>
