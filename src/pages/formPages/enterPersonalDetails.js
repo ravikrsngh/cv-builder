@@ -2,6 +2,7 @@ import './formPages.css';
 import dropdownicon from './../../assets/img/icons/dropdown_icon.png';
 import deleteicon from './../../assets/img/icons/delete.png'
 import hobbyicon from './../../assets/img/dummy/hooby_dummy_icon.png';
+import Input from './../../components/formComponents/inputs'
 import React, {useState,useRef} from 'react';
 import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
@@ -118,6 +119,52 @@ const AdditionalDetailsFormComponent = (props) => {
 
 const EnterPersonalDetailsPage = () => {
 
+  const [personalDetailsForm,setPersonalDetailsForm] = useState({
+    formElements:[
+      [
+        {
+          type:"textarea",
+          label:"About us",
+          required:true,
+          removeable:false,
+          removedState:false
+        }
+      ],
+      [
+        {
+          type:"text",
+          label:"First Name",
+          required:true,
+          removeable:false,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"Last Name",
+          required:true,
+          removeable:false,
+          removedState:false
+        }
+      ],
+      [
+        {
+          type:"email",
+          label:"Email",
+          required:true,
+          removeable:false,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"Phone Number",
+          required:true,
+          removeable:false,
+          removedState:false
+        }
+      ]
+    ]
+  })
+
   const {setPersonalDetailsFormStatus} = useOutletContext()
 
   const [additionalFormDisplay, setAdditionalFormDisplay] = useState(true)
@@ -145,11 +192,25 @@ const EnterPersonalDetailsPage = () => {
         <p>Note :- Please note, fields that have a check box against it (check) will not display on the CV unless the check box is selected.</p>
       </div>
       <form className="form_details personal_details_form" onSubmit={onSubmitPersonalDetailsForm}>
+        {
+          personalDetailsForm['formElements'].map((ins) => {
+            console.log(ins);
+            return (
+              <div className="form_container">
+                {
+                  ins.map((i)=>{
+                    console.log(i);
+                    return (
+                      <Input properties={i} />
+                    )
+                  })
+                }
+              </div>
+            )
+          })
+        }
         <div className="form_container">
-          <div className="form_element">
-            <label>About you</label>
-            <textarea className="input_text" rows="8" required></textarea>
-          </div>
+          <Input type="textarea" label="About you" required={true} />
         </div>
         <div className="form_container">
           <div className="form_element">

@@ -179,6 +179,10 @@
   display: flex;
   margin-bottom: 12px;
 }
+.form_element label sup {
+  margin-left: 2px;
+  opacity: 0.5;
+}
 .form_element .input_text {
   width: 100%;
   border: none;
@@ -202,6 +206,7 @@
   color: #020069;
   font-weight: 500;
 }
+
 .form_element button[type=submit] {
 
   color: white;
