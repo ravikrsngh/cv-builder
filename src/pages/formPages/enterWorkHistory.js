@@ -1,6 +1,7 @@
 import './formPages.css';
 
 import React,{useState,useRef} from 'react';
+import Input from './../../components/formComponents/inputs'
 import deleteicon from './../../assets/img/icons/delete.png'
 import {Link} from 'react-router-dom';
 
@@ -26,13 +27,68 @@ const JobFormComponent = ({jobsHandler}) => {
   let presentRef = useRef(null)
   let jobDescRef = useRef(null)
 
+  const [jobForm,setJobForm] = useState({
+    formElements:[
+      [
+        {
+          type:"text",
+          label:"Job Title",
+          ref:jobTitleRef,
+          required:false,
+          removeable:false,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"date",
+          label:"Start Date",
+          ref:startDateRef,
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+        {
+          type:"date",
+          label:"End Date",
+          ref:endDateRef,
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"checkbox",
+          label:"Present",
+          ref:presentRef,
+          required:false,
+          removeable:true,
+          removedState:false
+        }
+      ],
+      [
+        {
+          type:"textarea",
+          label:"Job Description",
+          ref:jobDescRef,
+          required:false,
+          removeable:true,
+          removedState:false
+        }
+      ]
+
+    ]
+  })
+
   const onClickAddJob = () => {
+    console.log("hello");
     let new_job = {
-      title:jobTitleRef.current.value,
-      startDate:startDateRef.current.value,
-      endDate:endDateRef.current.value,
-      present:presentRef.current.checked,
-      jobDesc:jobDescRef.current.value
+      title:jobTitleRef.current?.value,
+      startDate:startDateRef.current?.value,
+      endDate:endDateRef.current?.value,
+      present:presentRef.current?.checked,
+      jobDesc:jobDescRef.current?.value
     }
     jobsHandler((prev) => {
       return [...prev,new_job]
@@ -45,42 +101,28 @@ const JobFormComponent = ({jobsHandler}) => {
 
   }
 
-
   return (
     <React.Fragment>
-      <div className="form_container">
-        <div className="form_element">
-          <label>Job Title</label>
-          <input type="text" className="input_text" ref={jobTitleRef} required />
-        </div>
+    {
+      jobForm.formElements.map((ins,k1) => {
+        return (
+          <div className="form_container">
+            {
+              ins.map((i,k2)=>{
+                return (
+                  <Input key={k1+"-"+k2} position={k1+"-"+k2} {...i} setState={setJobForm} />
+                )
+              })
+            }
+          </div>
+        )
+      })
+    }
+    <div className="form_container">
+      <div className="form_element">
+        <button type="button" onClick={onClickAddJob}>Add</button>
       </div>
-      <div className="form_container">
-        <div className="form_element">
-          <label>Start Date</label>
-          <input type="date" className="input_text" ref={startDateRef} required />
-        </div>
-        <div className="form_element">
-          <label>End Date</label>
-          <input type="date" className="input_text" ref={endDateRef} required />
-        </div>
-      </div>
-      <div className="form_container">
-        <div className="form_element form_element_checkbox">
-          <label>Present</label>
-          <input type="checkbox" ref={presentRef} required />
-        </div>
-      </div>
-      <div className="form_container">
-        <div className="form_element">
-          <label>Job Description</label>
-          <textarea className="input_text" ref={jobDescRef} rows="8" required></textarea>
-        </div>
-      </div>
-      <div className="form_container">
-        <div className="form_element">
-          <button onClick={onClickAddJob} type="button">Add</button>
-        </div>
-      </div>
+    </div>
     </React.Fragment>
   )
 }

@@ -178,10 +178,14 @@
   color: #020069;
   display: flex;
   margin-bottom: 12px;
+  min-width: 150px;
 }
 .form_element label sup {
   margin-left: 2px;
   opacity: 0.5;
+}
+.form_element label span {
+  margin-left: auto;
 }
 .form_element .input_text {
   width: 100%;
@@ -199,12 +203,13 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
+  min-width: 140px;
   height: 42px;
   border-radius: 25px;
   border: 2px solid #020069;
   color: #020069;
   font-weight: 500;
+  padding: 0 20px;
 }
 
 .form_element button[type=submit] {
@@ -229,7 +234,10 @@
   margin: 0;
   margin-left: 10px;
 }
-
+.form_element_centered {
+  display: flex;
+  justify-content: center;
+}
 
 .form_collapse_container {
   width: 100%;
@@ -258,6 +266,7 @@
   justify-content: space-between;
   gap:40px;
   margin-bottom: 12px;
+  margin-top: 20px;
 }
 .hobby_icon_container {
   width: 40px;

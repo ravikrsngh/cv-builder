@@ -52,6 +52,70 @@ const HobbyFormComponent = ({hobbiesHandler}) => {
 const AdditionalDetailsFormComponent = (props) => {
 
   let [hobbies,setHobbies] = useState([])
+  const [additionalDetailsForm,setAdditionalDetailsForm] = useState({
+    formElements:[
+      [
+        {
+          type:"text",
+          label:"Professional Title",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"text",
+          label:"Address Line 1",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"text",
+          label:"Address Line 2",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"text",
+          label:"Country",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"State",
+          required:false,
+          removeable:true,
+          removedState:false
+        }
+      ],
+      [
+        {
+          type:"text",
+          label:"City",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"Postal Code",
+          required:false,
+          removeable:true,
+          removedState:false
+        }
+      ]
+
+    ]
+  })
 
   const onClickDeleteHobbyIcon = (id) => {
     let copy = [...hobbies]
@@ -64,50 +128,22 @@ const AdditionalDetailsFormComponent = (props) => {
   }
   return (
     <React.Fragment>
-
-    <div className="form_container">
-      <div className="form_element">
-        <label>Professional Title</label>
-        <input type="text" className="input_text" />
-      </div>
-    </div>
-    <div className="form_container">
-      <div className="form_element">
-        <label>Address Line 1</label>
-        <input type="text" className="input_text" />
-      </div>
-    </div>
-    <div className="form_container">
-      <div className="form_element">
-        <label>Address Line 2</label>
-        <input type="text" className="input_text" />
-      </div>
-    </div>
-    <div className="form_container">
-      <div className="form_element">
-        <label>Country</label>
-        <input type="text" className="input_text" />
-      </div>
-      <div className="form_element">
-        <label>State</label>
-        <input type="text" className="input_text" />
-      </div>
-    </div>
-    <div className="form_container">
-      <div className="form_element">
-        <label>City</label>
-        <input type="text" className="input_text" />
-      </div>
-      <div className="form_element">
-        <label>Zip Code</label>
-        <input type="text" className="input_text" />
-      </div>
-    </div>
-    <div className="form_container">
-      <div className="form_element">
-        <label>Hobby</label>
-      </div>
-    </div>
+    {
+      additionalDetailsForm.formElements.map((ins,k1) => {
+        console.log(ins);
+        return (
+          <div className="form_container">
+            {
+              ins.map((i,k2)=>{
+                return (
+                  <Input key={k1+"-"+k2} position={k1+"-"+k2} {...i} setState={setAdditionalDetailsForm} />
+                )
+              })
+            }
+          </div>
+        )
+      })
+    }
     {hobbies.map((ins,key) => {
       return <HobbyComponent key={key} id={key} icon={hobbyicon} value={ins.value} onClickDeleteHobbyIcon={onClickDeleteHobbyIcon} />
     })}
@@ -183,6 +219,7 @@ const EnterPersonalDetailsPage = () => {
     setPersonalDetailsFormStatus(true)
     navigate('/enter-your-details/work-history')
   }
+  //<Input type={i.type} label={i.label} required={i.required} />
 
   return (
     <React.Fragment>
@@ -193,15 +230,14 @@ const EnterPersonalDetailsPage = () => {
       </div>
       <form className="form_details personal_details_form" onSubmit={onSubmitPersonalDetailsForm}>
         {
-          personalDetailsForm['formElements'].map((ins) => {
+          personalDetailsForm.formElements.map((ins,k1) => {
             console.log(ins);
             return (
               <div className="form_container">
                 {
-                  ins.map((i)=>{
-                    console.log(i);
+                  ins.map((i,k2)=>{
                     return (
-                      <Input properties={i} />
+                      <Input key={k1+"-"+k2} position={k1+"-"+k2} {...i} setState={setPersonalDetailsForm} />
                     )
                   })
                 }
@@ -209,29 +245,6 @@ const EnterPersonalDetailsPage = () => {
             )
           })
         }
-        <div className="form_container">
-          <Input type="textarea" label="About you" required={true} />
-        </div>
-        <div className="form_container">
-          <div className="form_element">
-            <label>First Name</label>
-            <input type="text" className="input_text" rows="8" required />
-          </div>
-          <div className="form_element">
-            <label>Last Name</label>
-            <input type="text" className="input_text" rows="8" required />
-          </div>
-        </div>
-        <div className="form_container">
-          <div className="form_element">
-            <label>Email</label>
-            <input type="email" className="input_text" rows="8" required />
-          </div>
-          <div className="form_element">
-            <label>Phone Number</label>
-            <input type="text" className="input_text" rows="8" required />
-          </div>
-        </div>
         <div className="form_collapse_container">
           <div className="form_collapse_container_header">
             <h3>Additional Details</h3>
