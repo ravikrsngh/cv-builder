@@ -225,7 +225,7 @@ const EnterPersonalDetailsPage = () => {
     <React.Fragment>
       <div className="form_details_container_header">
         <h2>Personal Details</h2>
-        <Link to="#">View Guide</Link>
+        <Link to="/blog">View Guide</Link>
         <p>Note :- Please note, fields that have a check box against it (check) will not display on the CV unless the check box is selected.</p>
       </div>
       <form className="form_details personal_details_form" onSubmit={onSubmitPersonalDetailsForm}>

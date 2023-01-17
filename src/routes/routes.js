@@ -27,6 +27,7 @@ import YourSubscription from './../pages/dashboard/yourSubscription';
 import OurTeams from './../pages/dashboard/ourTeams';
 import IndividualTeamPage from './../pages/individualTeam/individualTeam';
 import ServiceDetails from './../pages/serviceDetails/serviceDetails';
+import Blog from './../pages/blogs/blogs';
 
 const RouteData = () => {
   return (
@@ -58,6 +59,7 @@ const RouteData = () => {
         <Route path="our-services/:id" element={<ServiceDetails />} />
       </Route>
       <Route path='/preview-template' element={<PreviewTemplate />} />
+      <Route path='/blogs' element={<Blog />} />
     </Routes>
   );
 };

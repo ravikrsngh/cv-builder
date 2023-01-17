@@ -1,0 +1,26 @@
+.blog_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.blog_title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #020069;
+}
+.blog_time {
+  display: flex;
+  align-items: center;
+  gap:15px;
+  margin: 20px 0;
+}
+.blog_time img {
+  width: 20px;
+}
+.blog_content {
+  margin-top: 40px;
+}
+.blog_img {
+  max-width: 420px;
+}
