@@ -29,7 +29,52 @@ const DashboardTab = (props) => {
 const Dashboard = () => {
 
   let [currentTab, setCurrentTab] = useState('account-settings')
+  let user_type = "team"
 
+  if (user_type == "team") {
+    return (
+      <div className="pd main_dashboard_container">
+        <div className="dashboard_container">
+          <div className="dashboard_tab_container">
+            <div className="dashboard_tab_profile">
+              <div className="dashboard_tab_profile_pic">
+                <img src={roundicon} />
+              </div>
+              <div className="dashboard_tab_profile_info">
+                <h4>Ravi Kumar Singh</h4>
+                <span>ravi@gmail.com</span>
+              </div>
+            </div>
+            <DashboardTab
+              to='account-settings'
+              label = 'Account Settings'
+              icon = {usericon}
+              active = {currentTab == "account-settings"? true:false}
+              changeTab = {setCurrentTab}
+            />
+            <DashboardTab
+              to='login-and-security'
+              label = 'Login and Security'
+              icon = {usericon}
+              active = {currentTab == "login-and-security"? true:false}
+              changeTab = {setCurrentTab}
+            />
+            <div className="dashboard_tab_divider"></div>
+            <DashboardTab
+              to='service-requests'
+              label = "Service Requests"
+              icon = {usericon}
+              active = {currentTab == "service-requests"? true:false}
+              changeTab = {setCurrentTab}
+            />
+          </div>
+          <div className="dashboard_sections">
+            <Outlet />
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="pd main_dashboard_container">
       <div className="dashboard_container">
@@ -55,6 +100,13 @@ const Dashboard = () => {
             label = 'Login and Security'
             icon = {usericon}
             active = {currentTab == "login-and-security"? true:false}
+            changeTab = {setCurrentTab}
+          />
+          <DashboardTab
+            to='your-credits'
+            label = 'Your Credits'
+            icon = {usericon}
+            active = {currentTab == "your-credits"? true:false}
             changeTab = {setCurrentTab}
           />
           <div className="dashboard_tab_divider"></div>
@@ -123,6 +175,13 @@ const Dashboard = () => {
       </div>
     </div>
   )
+}
+
+const TeamDashboard = () => {
+
+  let [currentTab, setCurrentTab] = useState('account-settings')
+
+
 }
 
 export default Dashboard;

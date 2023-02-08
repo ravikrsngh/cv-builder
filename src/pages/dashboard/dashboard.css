@@ -5,6 +5,9 @@
   display: grid;
   grid-template-columns: 250px auto;
 }
+.dashboard_tab_container {
+  padding-top: 20px;
+}
 .dashboard_tab_profile {
   display: flex;
   gap:15px;
@@ -160,6 +163,46 @@
   font-size: 14px;
   color: #B0B0B0;
 }
+.accounts_form_element textarea {
+  border: none;
+  width: 100%;
+}
+.accounts_form_element_long > div {
+  flex-grow: 1;
+  max-width: none;
+}
+.accounts_services {
+  display: flex;
+  gap:20px;
+}
+.accounts_services span {
+  border: 1.5px solid black;
+  font-size: 14px;
+  padding: 5px 20px;
+  border-radius: 15px;
+}
+
+
+.credits_section {
+  display: flex;
+  justify-content: space-between;
+}
+.credits {
+  display: flex;
+  align-items: flex-end;
+}
+.credits h3 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 60px;
+  margin-right: 10px;
+}
+.credits span {
+  opacity: 0.5;
+}
+
+
+
 
 
 

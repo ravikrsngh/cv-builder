@@ -3,6 +3,7 @@ import './formPages.css';
 import React,{useState,useRef} from 'react';
 import deleteicon from './../../assets/img/icons/delete.png'
 import {Link} from 'react-router-dom';
+import Input from './../../components/formComponents/inputs'
 
 
 const ProfRefComponent = ({id,referee,email,number,onClickDeleteProfessionalReferenceIcon}) => {
@@ -22,6 +23,43 @@ const ProfRefFormComponent = ({profRefHandler}) => {
   let emailRef = useRef(null)
   let numberRef = useRef(null)
 
+  const [profRefForm,setProfRefForm] = useState({
+    formElements:[
+      [
+        {
+          type:"text",
+          label:"Referee",
+          required:false,
+          removeable:false,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"Contact Email",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+        {
+          type:"text",
+          label:"Contact Phone",
+          required:false,
+          removeable:true,
+          removedState:false
+        },
+      ],
+      [
+        {
+          type:"checkbox",
+          label:"Available on Request?",
+          required:false,
+          removeable:true,
+          removedState:false
+        }
+      ],
+    ]
+  })
+
   const onClickAddProfRef = () => {
     let new_profref = {
       referee:refereeRef.current.value,
@@ -39,21 +77,21 @@ const ProfRefFormComponent = ({profRefHandler}) => {
 
   return (
     <React.Fragment>
-
-    <div className="form_container">
-      <div className="form_element">
-        <label>Referee</label>
-        <input type="text" className="input_text" ref={refereeRef} required />
-      </div>
-      <div className="form_element">
-        <label>Contact Email</label>
-        <input type="text" className="input_text" ref={emailRef} required />
-      </div>
-      <div className="form_element">
-        <label>Contact Number</label>
-        <input type="text" className="input_text" ref={numberRef} required />
-      </div>
-    </div>
+    {
+      profRefForm.formElements.map((ins,k1) => {
+        return (
+          <div className="form_container">
+            {
+              ins.map((i,k2)=>{
+                return (
+                  <Input key={k1+"-"+k2} position={k1+"-"+k2} {...i} setState={setProfRefForm} />
+                )
+              })
+            }
+          </div>
+        )
+      })
+    }
     <div className="form_container">
       <div className="form_element">
         <button type="button" onClick={onClickAddProfRef}>Add</button>

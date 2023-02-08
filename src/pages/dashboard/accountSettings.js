@@ -22,7 +22,36 @@ const AccountSettingsInputField = ({label,type,defaultValue,editable}) => {
   )
 }
 
+const AdditionalTeamForm = () => {
+  let bio = "Results and achievements are important in the American workforce. When a hiring manager in the US is scanning your resume, they’re looking to see if you have what it takes to deliver value to the company."
+  return (
+    <>
+    <div className="accounts_form_container">
+      <div className="accounts_form_element accounts_form_element_long">
+        <div>
+          <label className="accounts_form_element_label">About</label>
+          <textarea defaultValue={bio} required={true} readOnly={true}></textarea>
+        </div>
+        <img className="icon" src={editicon} />
+      </div>
+    </div>
+    <div className="accounts_form_container">
+      <div className="accounts_form_element accounts_form_element_long">
+        <div>
+          <label className="accounts_form_element_label">Services</label>
+          <div className="accounts_services">
+            <span>CV Writer</span>
+            <span>Cover Letter Writer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
+  )
+}
+
 const AccountSettings = () => {
+  const user_type = "team"
   return (
     <React.Fragment>
     <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your Account</h3></div>
@@ -40,13 +69,17 @@ const AccountSettings = () => {
 
       <div className="accounts_form_container">
         <AccountSettingsInputField label="Name" type="text" defaultValue="Ravi Kumar Singh" editable={false} />
-        <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} />
+        {user_type == "team"? <AccountSettingsInputField label="Professional Title" type="text" defaultValue="Professional CV Writer" editable={true} /> : <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} /> }
       </div>
 
       <div className="accounts_form_container">
         <AccountSettingsInputField label="Phone Number" type="text" defaultValue="657389200" editable={true} />
-        <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="657389200" editable={true} />
+        {user_type == "team"? <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} /> : <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="78585234696" editable={false} /> }
       </div>
+
+      { user_type == "team"? <AdditionalTeamForm /> : null }
+
+
 
       <div className="accounts_form_container">
         <div className="accounts_form_element">

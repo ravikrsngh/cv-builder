@@ -17,6 +17,7 @@ import PreviewTemplate from './../pages/formPages/previewTemplate';
 import Dashboard from './../pages/dashboard/dashboard';
 import AccountSettings from './../pages/dashboard/accountSettings';
 import LoginAndSecurity from './../pages/dashboard/loginAndSecurity';
+import YourCredits from './../pages/dashboard/yourCredits';
 import YourCV from './../pages/dashboard/yourCV';
 import YourCoverLetters from './../pages/dashboard/yourCoverLetters';
 import YourTemplates from './../pages/dashboard/yourTemplates';
@@ -25,6 +26,8 @@ import PurchaseHistory from './../pages/dashboard/purchaseHistory';
 import OurServices from './../pages/dashboard/ourServices';
 import YourSubscription from './../pages/dashboard/yourSubscription';
 import OurTeams from './../pages/dashboard/ourTeams';
+import ServiceRequest from './../pages/dashboard/serviceRequest';
+import ServiceRequestDetails from './../pages/dashboard/serviceRequestDetails';
 import IndividualTeamPage from './../pages/individualTeam/individualTeam';
 import ServiceDetails from './../pages/serviceDetails/serviceDetails';
 import Blog from './../pages/blogs/blogs';
@@ -47,6 +50,7 @@ const RouteData = () => {
       <Route path='/dashboard' element={<Dashboard />}>
         <Route path="account-settings" element={<AccountSettings />} />
         <Route path="login-and-security" element={<LoginAndSecurity />} />
+        <Route path="your-credits" element={<YourCredits/>} />
         <Route path="your-cv" element={<YourCV />} />
         <Route path="your-cover-letters" element={<YourCoverLetters />} />
         <Route path="your-templates" element={<YourTemplates />} /><Route path="your-templates" element={<YourTemplates />} />
@@ -57,6 +61,8 @@ const RouteData = () => {
         <Route path="our-team" element={<OurTeams />} />
         <Route path="our-team/:id" element={<IndividualTeamPage/>} />
         <Route path="our-services/:id" element={<ServiceDetails />} />
+        <Route path="service-requests" element={<ServiceRequest />} />
+        <Route path="service-requests/:id" element={<ServiceRequestDetails />} />
       </Route>
       <Route path='/preview-template' element={<PreviewTemplate />} />
       <Route path='/blogs' element={<Blog />} />
