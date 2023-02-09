@@ -1,0 +1,61 @@
+.buycredit_container {
+  display:flex;
+}
+.buycredit_container_1 {
+  flex: 0 0 420px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+}
+.credit_card {
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.075);
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: relative;
+}
+.credit_card img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+}
+
+.buycredit_container_2 {
+  padding-left: 40px;
+  flex-grow: 1;
+}
+.buycredit_container_2 > div {
+  margin-bottom: 10px;
+}
+.buycredit_container_2 .label {
+  font-size: 12px;
+}
+.buycredit_container_2 .value {
+  font-size: 18px;
+  font-weight: 500;
+}
+.apply_gift_card_container form {
+  display: flex;
+  margin-top: 5px;
+  gap:5px;
+}
+.apply_gift_card_container input {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.apply_gift_card_container button {
+  width: 100px;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.085);
+  border-radius: 3px;
+}
+.pay_btn_credits {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.085);
+  padding: 10px 0;
+  margin-top: 20px;
+}

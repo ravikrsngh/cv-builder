@@ -7,7 +7,8 @@ const ReviewCard = (props) => {
       <div className="review_card_img"><img src={props.img} /></div>
       <div className="review_card_info">
         <p>{props.review}</p>
-        <span>{props.by}</span>
+        {props.by? <span>{props.by}</span> : null}
+        {props.link? <a>View CV</a> : null}
       </div>
     </div>
   )

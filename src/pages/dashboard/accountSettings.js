@@ -74,7 +74,7 @@ const AccountSettings = () => {
 
       <div className="accounts_form_container">
         <AccountSettingsInputField label="Phone Number" type="text" defaultValue="657389200" editable={true} />
-        {user_type == "team"? <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} /> : <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="78585234696" editable={false} /> }
+        {user_type == "team"? <AccountSettingsInputField label="Email Address" type="email" defaultValue="ravi@gmail.com" editable={false} /> : <AccountSettingsInputField label="Work Phone Number" type="text" defaultValue="78585234696" editable={true} /> }
       </div>
 
       { user_type == "team"? <AdditionalTeamForm /> : null }

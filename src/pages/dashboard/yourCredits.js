@@ -1,11 +1,13 @@
 import './dashboard.css';
 import editicon from './../../assets/img/icons/edit.png';
 import roundicon from './../../assets/img/icons/roundicon.png';
+import BuyCreditPopUp from './../../components/popup/buycredit';
 
 import React, {useState} from 'react';
 import {Link,useNavigate, useOutletContext} from 'react-router-dom';
 
 const YourCredits = () => {
+  const [popupDisplay,setPopupDisplay] = useState(false)
   return (
     <React.Fragment>
     <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your Credits</h3></div>
@@ -14,7 +16,7 @@ const YourCredits = () => {
         <h3>786</h3><span>remaining</span>
       </div>
       <div className="credits_buy_btn">
-        <div><button className="share_cv_btn">Buy More</button></div>
+        <div><button className="share_cv_btn" onClick={() => setPopupDisplay(true)}>Buy More</button></div>
       </div>
     </div>
     <br/><br/><br/>
@@ -82,6 +84,7 @@ const YourCredits = () => {
         </tbody>
       </table>
     </div>
+    <BuyCreditPopUp popupDisplay={popupDisplay} popupDisplayHandler={setPopupDisplay} />
     </React.Fragment>
   )
 }
