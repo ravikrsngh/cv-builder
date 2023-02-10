@@ -9,10 +9,9 @@ const Header = () => {
         <Link to="/"><img src={logo} /> </Link>
       </div>
       <div className="header_noauth_links">
-        <Link to="" >About</Link>
-        <Link to="" >CV</Link>
-        <Link to="" >Cover Letters</Link>
+        <Link to="" >Services</Link>
         <Link to="" >Blogs</Link>
+        <Link to="/contact-us" >Contact Us</Link>
         <Link to="/login"  className="header_login_btn">Login</Link>
       </div>
     </header>

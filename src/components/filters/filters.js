@@ -1,11 +1,11 @@
 import { useState, useContext, useEffect } from 'react';
 import dropdown_arrow from './../../assets/img/icons/droppdown_arrow.png';
 
-const SingleInputFilter = ({className,label,type}) => {
+const SingleInputFilter = ({className,label,type,placeholder}) => {
   return  (
     <div className={className}>
       <label>{label}</label>
-      <input className="input" type={type} />
+      <input className="input" type={type} placeholder={placeholder? placeholder: ""} />
     </div>
   )
 

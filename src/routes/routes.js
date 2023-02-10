@@ -30,6 +30,7 @@ import ServiceRequest from './../pages/dashboard/serviceRequest';
 import ServiceRequestDetails from './../pages/dashboard/serviceRequestDetails';
 import IndividualTeamPage from './../pages/individualTeam/individualTeam';
 import ServiceDetails from './../pages/serviceDetails/serviceDetails';
+import ContactUs from './../pages/contactus/contactus';
 import Blog from './../pages/blogs/blogs';
 
 const RouteData = () => {
@@ -66,6 +67,7 @@ const RouteData = () => {
       </Route>
       <Route path='/preview-template' element={<PreviewTemplate />} />
       <Route path='/blogs' element={<Blog />} />
+      <Route path='/contact-us' element={<ContactUs />} />
     </Routes>
   );
 };

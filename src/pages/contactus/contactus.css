@@ -1,0 +1,82 @@
+.contact_us_container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 60px auto;
+  display: flex;
+}
+.contact_us_container_1 {
+  flex: 0 0 400px;
+}
+.contact_us_container_1 h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.contact_card {
+  display: flex;
+  align-items: center;
+  gap:20px;
+  margin-bottom: 20px;
+}
+.contact_card_icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact_card_icon svg {
+  width: 24px;
+  height: auto;
+}
+.contact_social {
+  margin-top: 40px;
+}
+.contact_social span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.contact_social_icons {
+  display: flex;
+  gap:20px;
+  margin-top: 10px;
+}
+.contact_social_icons svg {
+  height: 20px;
+}
+
+
+
+
+.contact_us_container_2 {
+  flex-grow: 1;
+  background-color: #f2f6f9;
+  padding: 40px;
+}
+.contact_us_container_2 h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.contact_form_elements {
+  display: flex;
+  gap:20px;
+  margin-bottom: 20px;
+}
+.contact_form_elements .input {
+  flex-grow: 1;
+  border: 2px solid rgba(0, 0, 0, 0.075);
+  padding: 12px 15px;
+  font-size: 14px;
+}
+.contact_form_elements button {
+  padding: 15px 20px;
+  width: 200px;
+  border-radius: 40px;
+  font-size: 14px;
+  color: white;
+  background: #0080ff;
+  margin-left: auto;
+}

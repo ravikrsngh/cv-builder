@@ -29,6 +29,7 @@ const ServiceRequest = () => {
       <div className="dashboard_sections_header"><h3 className="dashboard_main_heading">Your Service Requests</h3></div>
 
       <div className="dashboard_filters_section">
+        <SingleInputFilter className="dashboard_filter dashboard_filter_medium" label="Search User" type="text" placeholder="Type name, email, member Id etc..." />
         <SingleInputFilter className="dashboard_filter" label="Date From" type="date" />
         <SingleInputFilter className="dashboard_filter" label="Date End" type="date" />
         <SearchableDropdownFilter

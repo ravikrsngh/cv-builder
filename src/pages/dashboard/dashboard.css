@@ -93,6 +93,8 @@
   flex-wrap: wrap;
   gap:20px;
   margin-bottom: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
 }
 .dashboard_filter {
   position: relative;
@@ -114,6 +116,7 @@
   min-width: 200px;
   max-width: 200px;
   gap:15px;
+  background: #fff;
 }
 .dashboard_filter .input span {
   white-space: nowrap;
@@ -123,6 +126,10 @@
 }
 .dashboard_filter .input .dropdown_arrow {
   width: 15px;
+}
+.dashboard_filter_medium .input {
+  min-width: 400px;
+  max-width: 400px;
 }
 .dashboard_filter .filter_option_container {
   background-color: #f6f6f6;
@@ -150,6 +157,7 @@
   padding: 8px 8px;
   font-size: 12px;
 }
+
 
 
 
